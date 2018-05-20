@@ -1,7 +1,7 @@
 function main() {
 
-    
-    var socket = io.connect('http://localhost:3000');
+   var socket = io.connect('http://localhost:3000');
+     
     var chatDiv = document.getElementById('chat');
     var input = document.getElementById('message');
     var button = document.getElementById('submit');
