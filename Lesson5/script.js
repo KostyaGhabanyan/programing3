@@ -1,9 +1,11 @@
 function main() {
+
+    
     var socket = io.connect('http://localhost:3000');
     var chatDiv = document.getElementById('chat');
     var input = document.getElementById('message');
     var button = document.getElementById('submit');
-    var Delete = document.getElementById("Delete")
+    var del = document.getElementById("deleteT")
     function handleSubmit(evt) {
         var val = input.value;
         if (val != "") {
@@ -11,10 +13,10 @@ function main() {
         }
     }
     function delmassege(a) {
-        socket.emit("uzum em lriv jnjem");
+       socket.emit('uzum em jnjem');
     }
     button.onclick = handleSubmit;
-    Delete.onclick = delmassege;
+    del.onclick = delmassege;
     function handleMessage(msg) {
         var p = document.createElement('p');
         p.innerText = msg;
@@ -23,14 +25,21 @@ function main() {
     }
 
     socket.on('display message', handleMessage);
-   function deleteTags() {
-        delmassege("p").remove("test");
-    }
-  
+    function deleteTags() {
+var paragraphs = document.getElementsByTagName("p");
 
-    socket.on("dhima el teqstery du jnji", deleteTags); { }
-    window.onload = main;
-    socket.emit("uzum em lriv jnjem");
+        for (var i in paragraphs) {
+            paragraphs[0].remove();
+            if(paragraphs.length == 0){
+                break;
+            }
+
+        }
+
+    }
+
+    
+    socket.on("dhima el teqstery du jnji", deleteTags); 
 }
 
 
