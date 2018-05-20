@@ -19,4 +19,4 @@ io.on('connection', function (socket) {
         io.sockets.emit('gceq', arr);
 
     });
-});
+}); 

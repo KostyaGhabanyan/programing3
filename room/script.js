@@ -20,7 +20,7 @@ function setup() {
     createCanvas(2000, 2000);
     background('#acacac');
 
-    r = random(255);
+    r = random(255); 
     g = random(255);
     b = random(255);
 }
